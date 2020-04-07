@@ -315,8 +315,8 @@ if(groupBy_name %in% c('Area','AreaMap', 'FishingGround')){
       title = title,
       x = 'Longitude',
       y = 'Latitude',
-      subtitle = subtitle,
-      caption = caption
+      subtitle = subtitle
+      #,caption = caption
     ) +
     theme_classic() +
     theme(
