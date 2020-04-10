@@ -2,7 +2,7 @@ riverplotfun <- function(data=cl_rcg,left='FlagCountry',right='LandingCountry',
                          value='OfficialLandingCatchWeight',palette=NULL,
                          threshold=0.001,title='',save=TRUE,
                          filename='riverplot.png',width=6,
-                         height=4,pointsize=10,res=600,...) {
+                         height=4,pointsize=10,res=600,addToTitle,newVarName,...) {
   
   	# prepares a river plot
 	# Hans Gerritsen, MI, Sweden
@@ -42,17 +42,24 @@ riverplotfun <- function(data=cl_rcg,left='FlagCountry',right='LandingCountry',
                 "#666666")
    palette <- data.frame(Country,colour=rep(colour,100)[1:length(Country)])
   } 
+  
   i <-match(toupper(nodes$ID),palette$Country)
   nodes$col <- as.character(palette$colour)[i]
   nodes$col <- ifelse(is.na(nodes$col),'#0000FF',nodes$col)
   #legend('center',legend=nodes$ID,fill=nodes$col,ncol=3)
   
   r <- makeRiver(nodes, edges)
+  if (newVarName == "Landing(t)") {
+  caption <- paste("Proportional landing by weight of " ,addToTitle)
+  } else {
+    caption <- paste("Proportional number by trip of " ,addToTitle)  
+  }
   if(save) png(filename,width,height,'in',pointsize,res=res,...)
     par(mar=c(0,0,3,0))
     plot(r,srt=0,text.pos=2,node_margin=0.05,plot_area=0.96)
     mtext(title,3,0)
   if(save) dev.off()
+    return(list(r, caption))
 }
 
 
