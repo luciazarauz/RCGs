@@ -533,9 +533,7 @@ for (a in unique(param$Section)) {
             )
           }
     
-         cat('Figure ',graph_det$Subsubsection[i],'.',i,'. ',graph_det$Var[i],' by ',graph_det$var1[i],'  \n ',sep='')
-         cat('  \n ') 
-         cat('text baaablaaa bla  \n ')
+         cat('Figure ',graph_det$Subsubsection[i],'.',i,'. ',' ',res[[3]] ,'\n ',sep='')
         }
         
         cat('  \n ')
@@ -572,8 +570,7 @@ for (a in unique(param$Section)) {
             )
           }
 
-         cat('Figure ',graph_det$Subsubsection[i],'.',i,'. blablabls  \n ',sep='')
-         cat('Figure ',graph_det$Subsubsection[i],'.',i,'. ',graph_det$Var[i],' by ',graph_det$var1[i],' and ',graph_det$var2[i],'  \n ',sep='')
+         cat('Figure ',graph_det$Subsubsection[i],'.',i ,'. ',res[[3]],'  \n ',sep='')
          cat('  \n ') 
         }
         
@@ -615,8 +612,7 @@ for (a in unique(param$Section)) {
             )
           }
 
-         cat('Figure ',graph_det$Subsubsection[i],'.',i,'. ',graph_det$func[i],' of ',graph_det$var[i],' and ',graph_det$groupBy[i],'(',graph_det$addToTitle[i],')  \n ',sep='')
-         cat(res[[3]],'  \n ') 
+         cat('Figure ',graph_det$Subsubsection[i],'.',i,'. ',res[[3]],'  \n ',sep='')
         }
 
         cat('  \n ')
@@ -662,9 +658,7 @@ for (a in unique(param$Section)) {
             )
           }
 
-       cat('Figure ',graph_det$Subsubsection[i],'.',i,'. ',graph_det$func[i],' of ',graph_det$newVarName[i],' by ',graph_det$groupBy[i],'(',graph_det$addToTitle[i],')  \n ',sep='')
-      cat('  \n ') 
-      cat(res[[3]],' \n ')
+       cat('Figure ',graph_det$Subsubsection[i],'.',i,'. ',res[[3]],' \n ',sep='')
         }
 
         cat('  \n ')
@@ -712,9 +706,7 @@ for (a in unique(param$Section)) {
             )
           }
 
-        cat('Figure ',graph_det$Subsubsection[i],'.',i,'. ',graph_det$func[i],' of ',graph_det$newVarName[i],' by ',graph_det$groupBy[i],'(',graph_det$addToTitle[i],')  \n ',sep='')
-        cat('  \n ') 
-        cat(res[[3]],'\n ')
+        cat('Figure ',graph_det$Subsubsection[i],'.',i,'. ',res[[3]],'\n ',sep='')
         }
 
         cat('  \n ')
@@ -726,6 +718,8 @@ for (a in unique(param$Section)) {
                  title=paste(graph_det$var1[i]," (left) to ",graph_det$var2[i]," (right) - ",graph_det$newVarName[i]," - ",graph_det$addToTitle[i],sep=""),
                  value=graph_det$Var[i],
                  save=TRUE,
+                 addToTitle = graph_det$addToTitle[i],
+                 newVarName=graph_det$newVarName[i],
                  filename=paste(figur_dir, graph_det$png_name[i],
                           ".png",
                           sep = ""))
@@ -733,10 +727,7 @@ for (a in unique(param$Section)) {
 cat('![plot of chunk ',graph_det$png_name[i],'](',figur_dir,graph_det$png_name[i],'.png)',sep="")
 cat('  \n ') 
 
-        cat('Figure ',graph_det$Subsubsection[i],'.',i,'. ',graph_det$newVarName[i],' by ',graph_det$addToTitle[i],'  \n ',sep="")
-        cat('blabla \n')
-        cat('  \n ') 
-        cat(' 6 \n ')
+        cat('Figure ',graph_det$Subsubsection[i],'.',i,'.', res[[2]],'\n ',sep='')
         }
          cat('  \n ') 
       }
