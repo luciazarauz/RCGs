@@ -178,7 +178,8 @@ scatterpieMap_func = function(df,
   
   
   # Set the plot parameters
-  
+  if (groupBy_name=="StatisticalRectangle"){groupBy_name="Statistical Rectangle"}
+  if (groupBy_name=="AreaMap"){groupBy_name="Area Map"}
   # title
   if (func_name %in% c('sum')) {
     title = paste(func_name,
