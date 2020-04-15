@@ -153,10 +153,10 @@ barplot_var_by_two_var_stacked <- function(x,  Var, var1, var2, tapply_type, pro
 	        caption<-paste(Var,' by ',var1,' and ', var2, 'for all data')}
 	      else{
 	        if(percent_var1==100 & percent_var2!=100 & percent_Var==100 & proportion==TRUE ){
-	          caption<-paste(Var,' by ', var1,' and ',var2,'. The',var2,' was given for', percent_var2, '% of observations.',sep='')
+	          caption<-paste(Var,' by ', var1,' and ',var2,'. The',var2,' was given for ', percent_var2, '% of observations.',sep='')
 	          }
 	        else{
-	          caption<-paste(Var,' by ', var1,' and ',var2,'. The',var1,' was given for', percent_var1, '% of observations.', sep='')
+	          caption<-paste(Var,' by ', var1,' and ',var2,'. The',var1,' was given for ', percent_var1, '% of observations.', sep='')
 	    }
 	      }
 	      }
